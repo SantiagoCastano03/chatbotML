@@ -1,0 +1,185 @@
+version: "3.1"
+
+intents:
+  - saludar
+  - despedir
+  - afirmar
+  - negar
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - nombre_usuario
+  - mas_info
+  - pedir_hora
+  - dar_categoria
+  - comprar
+  - pedir_categorias
+  - pedir_subcategorias
+  - dar_id
+  - mas_productos
+  - dar_producto
+  - pedir_recomendacion
+  - informar_edad
+  - informar_sexo
+  - preguntar_perfil
+
+actions:
+  - action_tiempo
+  - action_categoria
+  - action_muestra_categoria
+  - action_subcategoria
+  - action_buscar_productos_por_id
+  - action_buscar_productos_por_nombre
+  - action_recomendacion
+
+responses:
+  utter_generoreg:
+  - text: Me acordare de que sos {sexo}!
+  - text: Gracias por proporcionar tu genero
+
+  utter_edadreg:
+  - text: Edad registrada.
+  - text: Gracias por proporcionar tu edad
+
+  utter_nombrereg:
+  - text: "Hola {nombre}"
+
+  utter_dar_slot_values:
+  - text: "Este es tu perfil de busqueda:\n
+            Tenes {edad} anios\n 
+            Sos {sexo}"
+
+  utter_ask_edad:
+  - text: Por favor, proporciona tu edad.
+  - text: Cual es tu edad?
+
+  utter_datos_guardados:
+  - text: Hemos guardado tus datos con exito.
+
+  utter_ask_sexo:
+  - text: Sos hombre o mujer?
+
+  utter_consulta_nombre_categoria:
+  - text: Especifique el nombre de la categoria para encontrar su respectivo ID
+  - text: Inserte la categoria para conseguir su ID.
+
+  utter_producto:
+  - text: Que producto en especifico deseas? (Especificar el producto entre "")
+  - text: Cual es el producto que quieres buscar? (Especificar el producto entre "")
+  - text: Que producto te gustaria que busque? (Especificar el producto entre "")
+  - text: Que nombre tiene el producto buscado? (Especificar el producto entre "")
+
+  utter_consulta_producto:
+  - text: Tienes un producto en mente?
+  - text: Sabes el producto que quieres buscar?
+
+  utter_preguntar_id:
+  - text: Sabe el ID de la categoria que desea buscar?
+  - text: Conoce el ID de la categoria que quiere buscar?
+
+  utter_comenzar:
+  - text: Ahora debes realizar la misma consulta pero con el correspondiente ID de la categoria(si se obtuvo uno)
+
+  utter_consulta_id_categoria:
+  - text: Inserte el ID de la categoria buscada.
+  - text: Cual es el ID de la categoria que desea buscar?
+  - text: Especifique el ID de la categoria del producto.
+  - text: Necesito el ID de la categoria.
+
+  utter_info:
+  - text: Aqui te dejo el [sitio web](https://www.mercadolibre.com.ar/)
+
+  utter_greet:
+  - text: "Hola!" 
+  - text: "Buen dia, como puedo ayudarte?"
+  - text: "Hola, ¿Como puedo asistirte?"
+  - text: "Bienvenido, ¿En que puedo ayudarte?"
+
+  utter_cheer_up:
+  - text: "Tengo algo que te puede alegrar:"
+    image: "https://i.ytimg.com/vi/Bd7C_4eQVaw/sddefault.jpg"
+
+  utter_did_that_help:
+  - text: "Te he ayudado?"
+  - text: "Hay algo mas en que te pueda ayudar?"
+
+  utter_happy:
+  - text: "Genial!"
+  - text: "Perfecto, sigue así!"
+  - text: "Asombroso"
+  - text: "Muy bien"
+
+  utter_goodbye:
+  - text: "Chau"
+  - text: "Hasta luego"
+  - text: "Hasta pronto, que tengas un buen dia"
+  - text: "Nos vemos"
+  - text: "Chau, que tengas un asombroso dia"
+  - text: "Espero verte pronto"
+  - text: "Espero haberte ayudado, adiós"
+
+  utter_iamabot:
+  - text: "Soy un asistente virtual"
+  - text: "Soy un bot programado para ayudarte con la busqueda de productos en Mercado Libre"
+
+  utter_default: 
+  - text: No entendi, podrias formularlo con otras palabras?
+
+forms:
+  info_user_form:
+    required_slots:
+      - edad
+      - sexo
+
+entities:
+  - nombre
+  - categoria 
+  - id
+  - producto
+  - edad
+  - sexo
+
+slots:
+  edad:
+    type: float
+    mappings:
+    - type: from_entity
+      entity: edad
+  sexo:
+    type: categorical
+    values:
+      - hombre
+      - mujer
+    mappings:
+    - type: from_entity
+      entity: sexo
+  nombre:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: nombre
+  categoria:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: categoria
+  id:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: id
+  producto:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: producto
+  offset:
+    type: float
+    initial_value: 0
+    mappings:
+      - type: custom
+        external_name: "ofsset"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,75 @@
+version: "3.1"
+
+stories:
+- story: happy path
+  steps:
+  - intent: saludar
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: saludar
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+
+- story: time path   
+  steps:
+  - intent: saludar
+  - action: utter_greet
+  - intent: pedir_hora
+  - action: action_tiempo
+
+- story: buscar producto
+  steps:
+  - intent: comprar
+  - action: utter_consulta_producto
+  - checkpoint: check_consulta
+
+- story: usuario tiene producto
+  steps:
+  - checkpoint: check_consulta
+  - intent: afirmar
+  - action: utter_producto
+  - intent: dar_producto
+    entities:
+    - producto
+  - slot_was_set:
+    - producto
+  - action: action_buscar_productos_por_nombre
+
+- story: usuario no tiene producto
+  steps:
+  - checkpoint: check_consulta
+  - intent: negar
+  - action: utter_preguntar_id
+  - checkpoint: check_id
+
+- story: usuario sabe id
+  steps:
+  - checkpoint: check_id
+  - intent: afirmar
+  - action: utter_consulta_id_categoria
+  - intent: dar_id
+    entities:
+    - id
+  - slot_was_set:
+    - id
+  - action: action_buscar_productos_por_id
+  - intent: mas_productos
+  - action: action_buscar_productos_por_id
+
+- story: usuario no sabe id
+  steps: 
+  - checkpoint: check_id
+  - intent: negar
+  - action: utter_consulta_nombre_categoria
+  - intent: dar_categoria
+    entities:
+    - categoria
+  - slot_was_set:
+    - categoria
+  - action: action_categoria
+  - action: utter_comenzar

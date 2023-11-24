@@ -1,0 +1,36 @@
+version: "3.1"
+
+nlu:
+- lookup: id
+  examples: |
+    - MLA5725
+    - MLA1512
+    - MLA1403
+    - MLA1071
+    - MLA1367
+    - MLA1368
+    - MLA1743
+    - MLA1384
+    - MLA1246
+    - MLA1039
+    - MLA1051
+    - MLA1648
+    - MLA1144
+    - MLA1500
+    - MLA1276
+    - MLA5726
+    - MLA1000
+    - MLA2547
+    - MLA407134
+    - MLA1574
+    - MLA1499
+    - MLA1459
+    - MLA1182
+    - MLA3937
+    - MLA1132
+    - MLA3025
+    - MLA1168
+    - MLA1430
+    - MLA409431
+    - MLA1540
+    - MLA9304

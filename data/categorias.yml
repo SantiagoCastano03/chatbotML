@@ -1,0 +1,475 @@
+version: "3.1"
+
+nlu:
+- lookup: categoria
+  examples: |
+    - Acc. para Motos y Cuatriciclos
+    - Accesorios Náuticos
+    - Accesorios de Auto y Camioneta
+    - Accesorios para Línea Pesada
+    - Audio para VehículosAgro 
+    - GNC
+    - Herramientas para Vehículos
+    - Limpieza de Vehículos
+    - Llantas y Accesorios
+    - Lubricantes y Fluidos
+    - Motos
+    - Navegadores GPS para Vehículos
+    - Neumáticos
+    - Performance
+    - Repuestos Autos y Camionetas
+    - Repuestos Motos y Cuatriciclos
+    - Repuestos Náuticos
+    - Repuestos de Línea Pesada
+    - Seguridad Vehicular
+    - Servicio Programado
+    - Tags para el Pago de Peajes
+    - Tuning
+    - Agro
+    - Agricultura de Precisión
+    - Almacenaje
+    - Animales
+    - Apicultura
+    - Energia Renovable
+    - Fertilizantes
+    - Generadores de Energía
+    - Herramientas de Trabajo
+    - Infraestructura Rural
+    - Insumos Agrícolas
+    - Insumos Ganaderos
+    - Lubricantes y Fluidos
+    - Máquinas y Herramientas
+    - Protección de Cultivos
+    - Repuestos Maquinaria Agrícola
+    - Semillas
+    - Alimentos y Bebidas
+    - Almacén
+    - Bebidas
+    - Comida Preparada
+    - Congelados
+    - Frescos
+    - Kéfir
+    - Animales y Mascotas
+    - Aves
+    - Caballos
+    - Conejos
+    - Correas para Mascotas
+    - Gatos
+    - Insectos
+    - Jaulas para Mascotas
+    - Peces
+    - Perros
+    - Reptiles y Anfibios
+    - Roedores
+    - Antigüedades y Colecciones
+    - Antigüedades
+    - Banderas
+    - Coleccionables de Deportes
+    - Esculturas
+    - Filatelia
+    - Militaría y Afines
+    - Monedas y Billetes
+    - Posters
+    - Arte, Librería y Mercería
+    - Arte y Manualidades
+    - Espejos Venecitas
+    - Librería
+    - Mercería
+    - Autos 
+    - Motos 
+    - Autos Chocados y Averiados
+    - Autos de Colección
+    - Autos y Camionetas
+    - Camiones
+    - Colectivos
+    - Maquinaria Agrícola
+    - Maquinaria Vial
+    - Motorhomes
+    - Motos
+    - Náutica
+    - Vehículos
+    - Planes de Ahorro
+    - Semirremolques
+    - Bebés
+    - Andadores y Vehículos de Bebés
+    - Artículos de Bebés para Baño
+    - Artículos de Maternidad
+    - Chupetes y Mordillos
+    - Comida para Bebés
+    - Corralitos
+    - Cuarto del Bebé
+    - Higiene y Cuidado del Bebé
+    - Juegos y Juguetes para Bebés
+    - Lactancia y Alimentación
+    - Paseo del Bebé
+    - Ropa y Calzado para Bebés
+    - Salud del Bebé
+    - Seguridad para Bebés
+    - Belleza y Cuidado Personal
+    - Artefactos para el Cabello
+    - Artículos de Peluquería
+    - Barbería
+    - Cuidado de la Piel
+    - Cuidado del Cabello
+    - Depilación
+    - Farmacia
+    - Higiene Personal
+    - Manicuría y Pedicuría
+    - Maquillaje
+    - Perfumes y Fragancias
+    - Tratamientos de Belleza
+    - Cámaras y Accesorios
+    - Accesorios para Cámaras
+    - Cables
+    - Cámaras
+    - Drones y Accesorios
+    - Filmadoras y Cámaras de Acción
+    - Instrumentos Ópticos
+    - Lentes y Filtros
+    - Repuestos para Cámaras
+    - Revelado y Laboratorio
+    - Álbumes y Portarretratos
+    - Celulares y Teléfonos
+    - Accesorios para Celulares
+    - Celulares y Smartphones
+    - Handies y Radiofrecuencia
+    - Lentes de Realidad Virtual
+    - Repuestos de Celulares
+    - Smartwatches y Accesorios
+    - Tarifadores y Cabinas
+    - Telefonía Fija e Inalámbrica
+    - Telefonía IP
+    - Consolas y Videojuegos
+    - Accesorios para Consolas
+    - Accesorios para PC Gaming
+    - Consolas
+    - Flippers y Arcade
+    - Repuestos para Consolas
+    - Videojuegos
+    - Construcción
+    - Aberturas
+    - Accesorios de Construcción
+    - Baños y Sanitarios
+    - Electricidad
+    - Maquinarias para Construcción
+    - Materiales de Obra
+    - Mobiliario para Cocinas
+    - Pinturería
+    - Pisos y Revestimientos
+    - Plomería
+    - Deportes y Fitness
+    - Artes Marciales y Boxeo
+    - Buceo
+    - Bádminton
+    - Básquet
+    - Camping, Caza y Pesca
+    - Canoas, Kayaks e Inflables
+    - Ciclismo
+    - Equitación y Polo
+    - Esgrima
+    - Esqui y Snowboard
+    - Fitness y Musculación
+    - Fútbol
+    - Fútbol Americano
+    - Golf
+    - Handball
+    - Hockey
+    - Juegos de Salón
+    - Kitesurf
+    - Monopatines y Scooters
+    - Montañismo y Trekking
+    - Natación
+    - Paintball
+    - Parapente
+    - Patín y Skateboard
+    - Pilates y Yoga
+    - Pulsómetros y Cronómetros
+    - Ropa Deportiva
+    - Rugby
+    - Slackline
+    - Softball y Beisbol
+    - Suplementos y Shakers
+    - Surf y Bodyboard
+    - Tenis, Padel y Squash
+    - Tiro Deportivo
+    - Voley
+    - Wakeboard y Esqui Acuático
+    - Windsurf
+    - Zapatillas
+    - Electrodomésticos y Aires Ac.
+    - Artefactos de Cuidado Personal
+    - Climatización
+    - Cocción
+    - Dispensadores y Purificadores
+    - Lavado
+    - Pequeños Electrodomésticos
+    - Refrigeración
+    - Electrónica, Audio y Video
+    - Accesorios para Audio y Video
+    - Accesorios para TV
+    - Audio
+    - Cables
+    - Componentes Electrónicos
+    - Controles Remotos
+    - Drones y Accesorios
+    - Fundas y Bolsos
+    - Media Streaming
+    - Pilas y Cargadores
+    - Proyectores y Pantallas
+    - Repuestos para TV
+    - Televisores
+    - Video
+    - Entradas para Eventos
+    - Entradas de Colección
+    - Eventos Deportivos
+    - Eventos a Beneficio
+    - Exposiciones
+    - Otras Entradas
+    - Recitales
+    - Teatro
+    - Herramientas
+    - Accesorios para Herramientas
+    - Cajas y Organizadores
+    - Herramientas Eléctricas
+    - Herramientas Industriales
+    - Herramientas Manuales
+    - Herramientas Neumáticas
+    - Herramientas para Jardín
+    - Testers y Equipos de Medición
+    - Hogar, Muebles y Jardín
+    - Adornos y Decoración del Hogar
+    - Bazar y Cocina
+    - Baños
+    - Camas, Colchones y Accesorios
+    - Cuidado del Hogar y Lavandería
+    - Iluminación para el Hogar
+    - Jardin y Aire Libre
+    - Muebles para el Hogar
+    - Organización para el Hogar
+    - Seguridad para el Hogar
+    - Textiles de Hogar y Decoración
+    - Industrias y Oficinas
+    - Arquitectura y Diseño
+    - Embalaje y Logística
+    - Equipamiento Médico
+    - Equipamiento para Comercios
+    - Equipamiento para Oficinas
+    - Gastronomía y Hotelería
+    - Gráfica e Impresión
+    - Herramientas Industriales
+    - Publicidad y Promoción
+    - Seguridad Laboral
+    - Textil y Calzado
+    - Uniformes y Ropa de Trabajo
+    - Inmuebles
+    - Camas Náuticas
+    - Campos
+    - Casas
+    - Cocheras
+    - Consultorios
+    - Departamentos
+    - Depósitos y Galpones
+    - Fondo de Comercio
+    - Locales
+    - Oficinas
+    - Inmuebles
+    - PH
+    - Parcelas, Nichos y Bóvedas
+    - Quintas
+    - Terrenos y Lotes
+    - Tiempo Compartido
+    - Instrumentos Musicales
+    - Baterías y Percusión
+    - Equipos de DJ y Accesorios
+    - Estudio de Grabación
+    - Instrumentos de Cuerdas
+    - Instrumentos de Viento
+    - Metrónomos
+    - Micrófonos y Amplificadores
+    - Parlantes y Bafles
+    - Partituras y Letras
+    - Pedales y Accesorios
+    - Teclados y Pianos
+    - Joyas y Relojes
+    - Exhibidores y Joyeros
+    - Insumos para Joyería
+    - Joyas y Bijouterie
+    - Piedras Preciosas
+    - Piercings
+    - Plumas y Lapiceras de Lujo
+    - Relojes
+    - Repuestos para Relojes
+    - Juegos y Juguetes
+    - Armas y Lanzadores de Juguete
+    - Arte y Manualidades
+    - Casas y Carpas para Niños
+    - Electrónicos para Niños
+    - Figuritas, Álbumes y Cromos
+    - Hobbies
+    - Instrumentos Musicales
+    - Juegos de Agua y Playa
+    - Juegos de Mesa y Cartas
+    - Juegos de Plaza y Aire Libre
+    - Juegos de Salón
+    - Juguetes Antiestrés e Ingenio
+    - Juguetes de Bromas
+    - Juguetes de Construcción
+    - Juguetes de Oficios
+    - Juguetes para Bebés
+    - Mesas y Sillas para Niños
+    - Muñecos y Muñecas
+    - Patines y Patinetas
+    - Peloteros y Castillos
+    - Peluches
+    - Títeres y Marionetas
+    - Vehículos Montables para Niños
+    - Vehículos de Juguete
+    - Libros, Revistas y Comics
+    - Catálogos
+    - Ebooks
+    - Libros Físicos
+    - Revistas
+    - Música, Películas y Series
+    - Contenido Deportivo
+    - Cursos
+    - Música
+    - Peliculas Online
+    - Películas
+    - Series de TV
+    - Series y Tv Shows Online
+    - Videos de Recetas y DIY
+    - Ropa y Accesorios
+    - Abrigos
+    - Accesorios de Moda
+    - Bermudas y Shorts
+    - Blusas
+    - Calzado
+    - Calzas
+    - Camisas
+    - Enteritos
+    - Equipaje, Bolsos y Carteras
+    - Indumentaria Laboral y Escolar
+    - Kimonos
+    - Lotes de Ropa
+    - Pantalones
+    - Polleras
+    - Remeras, Musculosas y Chombas
+    - Ropa Deportiva
+    - Ropa Interior y de Dormir
+    - Ropa y Calzado para Bebés
+    - Trajes
+    - Trajes de Baño
+    - Vestidos
+    - Salud y Equipamiento Médico
+    - Cuidado de la Salud
+    - Equipamiento Médico
+    - Masajes
+    - Movilidad
+    - Ortopedia
+    - Suplementos Alimenticios
+    - Terapias Alternativas
+    - Servicios
+    - Asesoramiento Contable y Legal
+    - Belleza y Cuidado Personal
+    - Comunicación y diseño
+    - Cursos y Clases
+    - Delivery
+    - Fiestas y Eventos
+    - Fotografía, Música y Cine
+    - Hogar y Construcción
+    - Imprenta
+    - Mantenimiento de Vehículos
+    - Medicina y Salud
+    - Servicios
+    - Ropa y Moda
+    - Servicios para Mascotas
+    - Servicios para Oficinas
+    - Tecnología
+    - Transporte
+    - Viajes y Turismo
+    - Souvenirs, Cotillón y Fiestas
+    - Accesorios para Cosplay
+    - Cotillón
+    - Decoración para Fiestas
+    - Descartables para Fiestas
+    - Disfraces
+    - Espuma, Serpentina y Confeti
+    - Invitaciones y Tarjetas
+    - Kits Imprimibles para Fiestas
+    - Props para Photo Booths
+    - Souvenirs
+    - Adultos
+    - Artículos para Fumadores
+    - Coberturas Extendidas
+    - Criptomonedas
+    - Esoterismo
+    - Gift Cards
+    - Hornos Crematorios
+    - Insumos para Tatuajes
+    - Kits de Criminalística
+    - Licencias para Taxis
+    - Mangas de Viento
+    - Propina
+    - Ácido Clorhídrico
+    - electronica
+    - computacion
+    - ropa y moda
+    - alimentacion y bebidas
+    - mascotas
+    - jardineria
+    - suministros de oficina
+    - vestidos
+    - software
+    - aplicaciones
+    - automocion
+    - productos gourmet
+    - fitness
+    - camaras y fotografia
+    - materiales de construccion
+    - construccion
+    - Accesorios para Vehículos
+    - Accesorios para Vehiculos
+    - Agro
+    - Alimentos Y Bebidas
+    - Animales Y Mascotas
+    - Autos, Motos y Otros
+    - AntigÃ¼edades Y Colecciones
+    - Arte, LibrerÃ­a Y MercerÃ­a
+    - Autos
+    - Bebes
+    - Bebés
+    - Belleza Y Cuidado Personal
+    - Camaras Y Accesorios
+    - Cámaras Y Accesorios
+    - Celulares Y Telefonos
+    - Celulares Y Teléfonos
+    - Computacion
+    - Computación
+    - Consolas Y Videojuegos
+    - Construccion
+    - Construcción
+    - Deportes Y Fitness
+    - Electrodomesticos Y Aires Acondicionados
+    - Electrodomésticos Y Aires Acondicionados
+    - Electronica, Audio Y Video
+    - Electrónica, Audio Y Video
+    - Entradas para Eventos
+    - Herramientas
+    - Hogar, Muebles Y Jardin
+    - Hogar, Muebles Y Jardín
+    - Industrias Y Oficinas
+    - Inmuebles
+    - Instrumentos Musicales
+    - Joyas Y Relojes
+    - Juegos Y Juguetes
+    - Libros, Revistas Y Comics
+    - Motos
+    - Musica, Peliculas Y Series
+    - Música, Películas Y Series
+    - Ropa Y Accesorios
+    - Salud Y Equipamiento Medico
+    - Salud Y Equipamiento Médico
+    - Servicios
+    - Souvenirs, Cotillon Y Fiestas
+    - Souvenirs, Cotillón Y Fiestas
+    - Vehículos

@@ -1,0 +1,285 @@
+version: "3.1"
+
+nlu:
+- lookup: nombre
+  examples: |
+    - Santiago
+    - Carlo
+    - Maria
+    - Veronica
+    - Ramon
+    - Marta
+    - jorge
+
+- lookup: categoria
+  examples: |
+    - electronica
+    - Agro
+    - Bebidas
+    - tecnologia
+    - vehiculos
+    - lentes
+
+- lookup: id
+  examples: |
+    - MLA1276
+    - MLA5726
+    - MLA1000
+    - MLA2547
+
+- regex: producto
+  examples: |
+    - "(.*?)"
+
+- intent: dar_producto
+  examples: |
+    - el producto que quiero es ["auriculares"](producto)
+    - estoy buscando el producto ["televisor LG 40"](producto)
+    - quiero buscar ["pelotas de futbol"](producto)
+    - el producto es ["botines Nike Mercury"](producto)
+    - quiero comprar un ["lavarropas philco 800"](producto)
+    - quiero buscar ["celulares Samsung"](producto)
+    - el producto que quiero buscar es ["lentes oakley"](producto)
+    - quiero comprar los ["lentes rayban negros"](producto)
+
+- intent: mas_productos
+  examples: |
+    - dame mas productos
+    - listame mas productos
+    - lista mas
+    - quiero mas productos
+    - dame otros articulos
+
+- intent: dar_id
+  examples: |
+    - el id de la categoria es [MLA1512](id)
+    - el ID es [MLA1000](id)
+    - es [MLA1071](id)
+    - la categoria tiene el id [MLA1499](id)
+    - el id que deseo es [MLA5726](id)
+    - el ID que busco es [MLA3025](id)
+
+- intent: comprar
+  examples: |
+    - me gustaria buscar un producto
+    - quisiera buscar un producto
+    - deseo buscar productos
+    - quiero comprar productos
+    - quiero hacer una busqueda
+    - quiero buscar
+    - quiero comprar un producto
+    - me gustaria comprar
+    - quiero comprar
+    - quiero buscar un producto
+
+- intent: pedir_subcategorias
+  examples: |
+    - listame las subcategorias de [Motos](categoria)
+    - quiero ver la subcategorias de [Vehiculos](categoria)
+    - dame las subcategorias de [disfraces](categoria)
+    - quisiera ver todas las subcategorias existentes de [Agro](categoria)
+
+- intent: pedir_categorias
+  examples: |
+    - quisiera ver las categorias disponibles
+    - me gustaria saber que categorias hay
+    - mostrame las categorias
+    - dame todas las categorias disponibles
+    - listame las categorias posibles
+
+- intent: dar_categoria
+  examples: |
+    - necesito el id de [Disfraces](categoria)
+    - quiero el id categoria [locales](categoria)
+    - dame el id de la categoria [motos](categoria)
+    - me podrias dar el id de la categoria [criptomonedas](categoria)
+    - dame el ID de [Vehículos](categoria)
+    - la categoria es [motos](categoria)
+    - la categoria que busco es [Inmuebles](categoria)
+
+- intent: mas_info
+  examples: |
+    - quiero mas informacion de la pagina
+    - me gustaria poder entrar a la pagina
+    - quiero ir al sitio web
+    - quiero acceder a la pagina
+    - quiero acceder al sitio web
+    - me gustaria conocer la pagina
+    - deseo conocer el sitio web
+
+- intent: saludar
+  examples: |
+    - hey
+    - hola
+    - hi
+    - hola como andas
+    - buen dia
+    - holaaaa
+    - holis
+    - holu
+    - ei
+    - que onda
+    - todo bien
+    - buenas tardes
+    - buenas noches
+    - buenass
+    - buenaaaas
+    - olaaa
+    - holuuuu
+
+- intent: despedir
+  examples: |
+    - chauuu
+    - chau
+    - nos vemos
+    - gracias, chau
+    - un placer
+    - adios
+    - adiooss
+    - hasta luego
+    - hasta pronto
+    - chauchis
+    - me voy
+    - me fui
+
+- intent: afirmar
+  examples: |
+    - si
+    - sep
+    - correcto
+    - claro
+    - perfecto
+    - sipi
+    - s
+    - exacto
+
+- intent: negar
+  examples: |
+    - no
+    - n
+    - nunca
+    - no lo creo
+    - incorrecto
+    - de ninguna manera
+    - en realidad no
+    - para nada
+
+- intent: mood_great
+  examples: |
+    - perfecto
+    - genial
+    - asombroso
+    - sintiéndome como un rey
+    - maravilloso
+    - me siento muy bien
+    - estoy genial
+    - estoy increíble
+    - súper emocionado/a
+    - extremadamente bueno
+    - más o menos perfecto
+    - tan bueno
+    - tan perfecto
+    - increible
+    - espectacular
+    - me siento mejor que nunca
+    - es el mejor dia
+
+- intent: mood_unhappy
+  examples: |
+    - mi día fue horrible
+    - estoy triste
+    - no me siento muy bien
+    - estoy decepcionado/a
+    - súper triste
+    - estoy tan triste
+    - triste
+    - muy triste
+    - infeliz
+    - no es bueno
+    - no muy bueno
+    - extremadamente triste
+    - tan triste
+    - me siento horrible
+    - deprimido
+    - me siento mal
+    - me siento deprimido
+
+- intent: bot_challenge
+  examples: |
+    - eres un bot?
+    - eres un humano?
+    - estoy hablando con un bot?
+    - estoy hablando con un humano?
+
+- intent: nombre_usuario
+  examples: |
+    - Mi nombre es [Santiago](nombre)
+    - Me llamo [alfredo](nombre)
+    - Soy [Pedro](nombre)
+    - Llamame [Andrea](nombre)
+    - hola, soy [Lucia](nombre)
+    - Me llamo [Maria](nombre)
+    - no me llames mas asi, soy [julieta](nombre)
+
+- intent: pedir_hora
+  examples: |
+    - me podrias decir la hora actual
+    - quisiera saber que hora es
+    - decime la hora
+    - dame el horario
+
+- intent: pedir_recomendacion
+  examples: |
+    - que categoria me recomendas?
+    - listame las categorias que me gustarian
+    - cuales son las categorias que me gustarian?
+    - cuales categorias son para mi?
+    - recomendame categorias
+
+- intent: informar_edad
+  examples: |
+    - tengo [44](edad) anios
+    - mi edad es de [12](edad) anios
+    - yo tengo [7](edad) anios
+    - yo tengo [10](edad)
+    - tengo [66](edad) anios
+    - mi edad es de [23](edad) anios
+    - yo tengo [25](edad) anios
+    - tengo [56](edad) anios
+    - [33](edad) anios
+    - yo tengo [9](edad)
+    - yo tengo [82](edad) anios
+    - mi edad es [44](edad) anios
+    - mi edad es [60](edad)
+    - mi edad es de [11](edad) anios
+    - yo tengo [67](edad) anios
+    - tengo [50](edad) anios
+    - [60](edad) anios
+    - yo tengo [70](edad)
+    - yo tengo [80](edad) anios
+    - mi edad es [90](edad) anios
+    - mi edad es [55](edad)
+    - yo tengo [22](edad) anios
+    - tengo [45](edad) anios
+    - [63](edad) anios
+    - yo tengo [27](edad)
+    - yo tengo [87](edad) anios
+    - mi edad es [13](edad) anios
+    - mi edad es [66](edad)
+
+- intent: informar_sexo
+  examples: |
+    - soy [mujer](sexo)
+    - soy [hombre](sexo)
+    - soy [Mujer](sexo)
+    - soy [Hombre](sexo)
+
+- intent: preguntar_perfil
+  examples: |
+    - cuales son mis datos?
+    - que datos mios almacenaste?
+    - como es mi perfil?
+    - mostrame mi perfil
+    - mostrame mis datos
+    - mostrame los datos mios que guardaste
+

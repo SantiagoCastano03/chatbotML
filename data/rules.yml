@@ -1,0 +1,65 @@
+version: "3.1"
+
+rules:
+
+- rule: inicia form
+  steps:
+  - intent: pedir_recomendacion
+  - action: info_user_form
+  - active_loop: info_user_form
+
+- rule: Submit form
+  condition:
+  - active_loop: info_user_form
+  steps:
+  - action: info_user_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_datos_guardados
+  - action: action_recomendacion
+
+- rule: edad registrada
+  steps:
+  - intent: informar_edad
+  - action: utter_edadreg
+
+- rule: genero registrado
+  steps:
+  - intent: informar_sexo
+  - action: utter_generoreg
+
+- rule: dar datos
+  steps:
+  - intent: preguntar_perfil
+  - action: utter_dar_slot_values
+
+- rule: mostrar categorias
+  steps:
+  - intent: pedir_categorias
+  - action: action_muestra_categoria
+
+- rule: listar subcategorias
+  steps:
+  - intent: pedir_subcategorias
+  - action: action_subcategoria
+
+- rule: Despedir cada vez que el usuario dice chau
+  steps:
+  - intent: despedir
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Nombre de usuario registrado
+  steps:
+  - intent: nombre_usuario
+  - action: utter_nombrereg
+
+- rule: El user quiere acceder a la pagina
+  steps:
+  - intent: mas_info
+  - action: utter_info
